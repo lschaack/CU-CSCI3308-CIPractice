@@ -69,3 +69,37 @@ void coord_2d_midpoint(coord_2d_t* mid, const coord_2d_t* a, const coord_2d_t* b
     mid->y = ((a->y + b->y) / 2.0 );
 
 }
+
+double coord_2d_area_triangle(const coord_2d_t* a, const coord_2d_t* b, const coord_2d_t* c) {
+    double area = ((a->x * (b->x - c->y)) +(b->x * (c->y - a->y)) + (c->x * (a->y - b->y))) / 2;
+    return abs(area);
+}
+
+/*
+int main() {
+    coord_2d_t a;
+    coord_2d_t b;
+    coord_2d_t c;
+    double exp_area = 4.0;
+    double area;
+
+    a.x = a.y = b.y = 0;
+    b.x = 4;
+    c.x = c.y = 2;
+    area = coord_2d_area_triangle(&a, &b, &c);
+
+    printf("%f == %f", area, exp_area);
+*/
+    /* 2nd test */
+/*
+    exp_area = 100.0;
+
+    a.x = a.y = b.x = c.x = 0;
+    b.y = 10;
+    c.y = 20;
+    area = coord_2d_area_triangle(&a, &b, &c);
+
+    printf("%f == %f", area, exp_area);
+    return 0;
+}
+*/
